@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="atm-screen">
+        <h1>Cajero Automático</h1>
+        <div id="login-screen" class="screen">
+            <label for="account-select">Selecciona tu cuenta:</label>
+            <select id="account-select">
+                <option value="">--Selecciona--</option>
+                <option value="0">Mali</option>
+                <option value="1">Gera</option>
+                <option value="2">Sabi</option>
+            </select>
+            <br><br>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password">
+            <button onclick="login()">Ingresar</button>
+            <p id="login-error" class="error"></p>
+        </div>
+
+        <div id="operation-screen" class="screen" style="display: none;">
+            <h2 id="account-name"></h2>
+            <button onclick="checkBalance()">Consultar saldo</button>
+            <button onclick="depositMoney()">Ingresar monto</button>
+            <button onclick="withdrawMoney()">Retirar monto</button>
+            <p id="operation-result"></p>
+            <button onclick="logout()">Salir</button>
+        </div>
+
+        <div id="transaction-screen" class="screen" style="display: none;">
+            <h3 id="transaction-title"></h3>
+            <label for="amount">Monto:</label>
+            <input type="number" id="amount">
+            <button id="confirm-button" onclick="confirmTransaction()">Confirmar</button>
+            <p id="transaction-error" class="error"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
